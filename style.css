@@ -1,0 +1,264 @@
+/* CSS Reset */
+/* Resetting margins, paddings, and borders */
+/* div, span {
+  border: 0;
+  margin: 0;
+  padding: 0;
+} */
+
+/* Box sizing */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* General styles */
+body {
+  margin: 0;
+  background: repeating-linear-gradient(
+    to left,
+    #88c054,
+    #88c054 40px,
+    #99c96c 40px,
+    #99c96c 80px
+  );
+}
+
+button {
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border: 2px solid #f5f5f5;
+  border-radius: 50%;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1.5rem;
+}
+
+.stadium {
+  border: 2px solid white;
+  height: 850px;
+  flex-basis: 650px;
+  position: relative;
+  transition: transform ease-in-out .3s;
+}
+
+.center-circle, 
+.center-spot  {
+  border: 2px solid white;
+  border-radius: 50%;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.center-circle {
+  height: 70px;
+  width: 70px;
+}
+.center-spot {
+  background-color: white;
+  height: 17%;
+  width: 17%;
+}
+
+.top-half, 
+.bottom-half {
+  display: flex;
+  height: 50%;
+  justify-content: space-between;
+}
+.top-half {
+  border-bottom: 2px solid white;
+}
+.bottom-half {
+  align-items: flex-end;
+}
+
+.top-left-arc, 
+.top-right-arc, 
+.bottom-right-arc, 
+.bottom-left-arc {
+  height: 18px;
+  width: 18px;
+}
+.top-left-arc, 
+.bottom-right-arc {
+  border-bottom: 2px solid white;
+  border-left: 2px solid white;
+  border-bottom-left-radius: 18px;
+}
+.top-right-arc, 
+.bottom-left-arc {
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
+  border-bottom-right-radius: 18px;
+}
+.top-left-arc, 
+.bottom-left-arc {
+  transform: rotate(-90deg);
+}
+.top-right-arc, 
+.bottom-right-arc {
+  transform: rotate(90deg);
+}
+
+.top-penalty-area, 
+.bottom-penalty-area {
+  align-items: center;
+  border: 2px solid white;
+  border-top: none;
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  width: 200px;
+}
+.bottom-penalty-area {
+  transform: rotate(180deg);
+}
+.top-penalty-area::after, 
+.bottom-penalty-area::after {
+  backface-visibility: hidden;
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
+  border-bottom-right-radius: 60px;
+  content: "";
+  height: 60px;
+  position: absolute;
+  top: 70px;
+  transform: rotate(45deg);
+  width: 60px;
+}
+.top-penalty-area::before, 
+.bottom-penalty-area::before {
+  border: 2px solid white;
+  border-bottom: none;
+  content: "";
+  height: 10px;
+  position: absolute;
+  top: -12px;
+  width: 40px;
+}
+
+.top-goal-area, 
+.bottom-goal-area {
+  border: 2px solid white;
+  height: 50%;
+  width: 50%;
+}
+.top-goal-area {
+  border-top: none;
+}
+.bottom-goal-area {
+  border-bottom: none;
+  transform: rotate(180deg);
+}
+
+.penalty-mark {
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 50%;
+  height: 7px;
+  margin-top: 20px;
+  width: 7px;
+}
+
+@media only screen and (max-width: 599px) {
+  .stadium {
+    height: 750px;
+  }
+  
+  .center-circle {
+    height: 50px;
+    width: 50px;
+  }
+  
+  .top-penalty-area, 
+  .bottom-penalty-area {
+    height: 50px;
+    width: 100px;
+  }
+  .top-penalty-area::after, 
+  .bottom-penalty-area::after {
+    border-bottom-right-radius: 30px;
+    height: 30px;
+    top: 34px;
+    width: 30px;
+  }
+  .top-penalty-area::before, 
+  .bottom-penalty-area::before {
+    height: 9px;
+    top: -11px;
+    width: 20px;
+  }
+  
+  .penalty-mark {
+    height: 3.5px;
+    margin-top: 10px;
+    width: 3.5px;
+  }
+  
+  .top-left-arc, 
+  .top-right-arc, 
+  .bottom-right-arc, 
+  .bottom-left-arc {
+    height: 12px;
+    width: 12px;
+  }
+  .top-left-arc, 
+  .bottom-right-arc {
+    border-bottom-left-radius: 12px;
+  }
+  .top-right-arc, 
+  .bottom-left-arc {
+    border-bottom-right-radius: 12px;
+  }
+}
+
+@media only screen and (max-width: 399px) {
+  .stadium {
+    height: 600px;
+  }
+  
+  .center-circle {
+    height: 40px;
+    width: 40px;
+  }
+  
+  .top-penalty-area, 
+  .bottom-penalty-area {
+    height: 40px;
+    width: 80px;
+  }
+  .top-penalty-area::after, 
+  .bottom-penalty-area::after {
+    border-bottom-right-radius: 24px;
+    height: 24px;
+    top: 28px;
+    width: 24px;
+  }
+  .top-penalty-area::before, 
+  .bottom-penalty-area::before {
+    height: 7.2px;
+    top: -9px;
+    width: 16px;
+  }
+  
+  .penalty-mark {
+    margin-top: 8px;
+  }
+}
